@@ -1,4 +1,4 @@
-//Версія 1.3/1 від 2016/10/13
+//Версія 1.3.3 від 2016/10/13
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
 var adreso=''; // кінцева адреса
@@ -40,7 +40,7 @@ var pro=function()
       while (i<adresa.length)
       $('.list').append('<div class="item">' + adreso + '</div>');
       $('.list').append('<div class="item">sudo vconfig add '+iface+' '+vlan+'</div>');
-      $('.list').append('<div class="item">sudo ifconfig    '+iface+'.'+vlan+' inet 192.168.'+ip+'.33</div>');
+      $('.list').append('<div class="item">sudo ifconfig    '+iface+'.'+vlan+' inet 192.168.'+ip+'.'+ip_comp+'</div>');
       $('.list').append('<div class="item">sudo arp -s 192.168.'+ip+'.1 '+ adreso+'</div>');
       $('.list').append('<div class="item">arping -I        '+iface+'.'+vlan+' -b 192.168.'+ip+'.1</div>');
       $('.list').append('<div class="item">sudo vconfig rem '+iface+'.'+vlan+'</div>');
@@ -69,7 +69,7 @@ $(document).ready(function ()
         vlan  =$('input[name=vlan]').val();
         adresa=$('input[name=checkListItem]').val();
         iface =$('input[name=iface]').val();
-       
+        ip_comp=Math.floor((Math.random() * 100) + 10);
         for (i=0;i<adresa.length;i++)
           {if (adresa[i]!==' ' && adresa.charCodeAt(i)!==9) {adreso=adreso+adresa[i];}}
         adresa=adreso;
