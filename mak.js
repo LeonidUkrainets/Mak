@@ -40,10 +40,10 @@ var pro=function()
       while (i<adresa.length)
       $('.list').append('<div class="item">' + adreso + '</div>');
       $('.list').append('<div class="item">sudo vconfig add '+iface+' '+vlan+'</div>');
-      $('.list').append('<div class="item">sudo ifconfig    '+iface+'.'+vlan+' inet 192.168.0.33</div>');
-      $('.list').append('<div class="item">sudo arp -s 192.168.0.1 '+ adreso+'</div>');
-      $('.list').append('<div class="item">arping -I        eth1.'+vlan+' -b 192.168.0.1</div>');
-      $('.list').append('<div class="item">sudo vconfig rem eth1.'+vlan+'</div>');
+      $('.list').append('<div class="item">sudo ifconfig    '+iface+'.'+vlan+' inet 192.168.'+ip+'.33</div>');
+      $('.list').append('<div class="item">sudo arp -s 192.168.'+ip+'.1 '+ adreso+'</div>');
+      $('.list').append('<div class="item">arping -I        '+iface+'.'+vlan+' -b 192.168.'+ip+'.1</div>');
+      $('.list').append('<div class="item">sudo vconfig rem '+iface+'.'+vlan+'</div>');
       $('.list').append('<div class="item"><h4>Деякі корисні команди для олта BDCOM<h4></div>');
       $('.list').append('<div class="item">show epon interface EPON0/1:2 onu ctc optical-transceiver-diagnosis</div>');
       $('.list').append('<div class="item">show epon optical-transceiver-diagnosis</div>');
@@ -64,10 +64,12 @@ $(document).ready(function ()
     $('#button').click(function ()
         {
         $(".item").remove();
-        adreso=''
+        adreso='';
+        ip    =$('input[name=ipadr]').val();
         vlan  =$('input[name=vlan]').val();
         adresa=$('input[name=checkListItem]').val();
         iface =$('input[name=iface]').val();
+       
         for (i=0;i<adresa.length;i++)
           {if (adresa[i]!==' ' && adresa.charCodeAt(i)!==9) {adreso=adreso+adresa[i];}}
         adresa=adreso;
