@@ -25,6 +25,7 @@ $(document).ready(function ()
         for (i=;i<port.length;i++)
           {if (port[i]!==' ' && adresa.charCodeAt(i)!==9) {port=port+port[i];}}
         }
+        $('.list').append('<div class="item"> show mac address-table int epon ' + port + '</div>');
         create();
         });
     });
