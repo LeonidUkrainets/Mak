@@ -38,22 +38,59 @@ var pro=function()
       {adreso=adreso+':'+adresa.substring(i,i+2);
       i+=2;}
       while (i<adresa.length)
+     
+         
+      
       $('.list').append('<div class="item">' + adreso + '</div>');
       $('.list').append('<div class="item">sudo vconfig add '+iface+' '+vlan+'</div>');
       $('.list').append('<div class="item">sudo ifconfig    '+iface+'.'+vlan+' inet 192.168.'+ip+'.'+ip_comp+'</div>');
       $('.list').append('<div class="item">sudo arp -s 192.168.'+ip+'.1 '+ adreso+'</div>');
       $('.list').append('<div class="item">arping -I        '+iface+'.'+vlan+' -b 192.168.'+ip+'.1</div>');
       $('.list').append('<div class="item">sudo vconfig rem '+iface+'.'+vlan+'</div>');
-      $('.list').append('<div class="item"><h4>Деякі корисні команди для олта BDCOM<h4></div>');
-      $('.list').append('<div class="item">show epon interface EPON0/1:2 onu ctc optical-transceiver-diagnosis</div>');
-      $('.list').append('<div class="item">show epon optical-transceiver-diagnosis</div>');
-      $('.list').append('<div class="item">show mac address-table interface EPON 0/1:2</div>');
-      $('.list').append('<div class="item">show mac address-table dynamic vlan '+vlan+'</div>');
-      $('.list').append('<div class="item">show vlan id '+vlan+'</div>');
-      $('.list').append('<div class="item">show interface brief</div>');
-      $('.list').append('<div class="item">show epon onu-information</div>');
-      $('.list').append('<div class="item">show epon active-onu</div>');
-      $('.list').append('<div class="item">show epon inactive-onu</div>');
+   
+       <table>
+        <thead>
+          <th>$('.list').append('<div class="item"><h4>Деякі корисні команди для олтів BDCOM<h4></div>');</th>
+          <th>$('.list').append('<div class="item"><h4>Команди для вашківського олта 172.20.224.140<h4></div>');</th>
+        </thead>
+        <tr>
+             <td>$('.list').append('<div class="item">show epon interface EPON0/1:2 onu ctc opt</div>');</td> 
+             <td>$('.list').append('<div class="item">show mac-address-table all</div>');</td>
+         </tr>
+        <tr>
+             <td> $('.list').append('<div class="item">show epon optical-transceiver-diagnosis</div>');</td> 
+             <td>$('.list').append('<div class="item">show olt 1 all-onu-info</div>');</td>
+         </tr>
+        <tr>
+             <td>$('.list').append('<div class="item">show mac address-table interface EPON 0/1:2</div>');</td> 
+             <td>$('.list').append('<div class="item">show olt 1 mac-address-table mac-learning</div>');</td>
+         </tr>
+        <tr>
+             <td> $('.list').append('<div class="item">show mac address-table dynamic vlan '+vlan+'</div>');</td> 
+             <td>$('.list').append('<div class="item">show olt 1 online-onu</div>');</td>
+         </tr>
+        <tr>
+             <td>$('.list').append('<div class="item">show vlan id '+vlan+'</div>');</td> 
+             <td>$('.list').append('<div class="item">show olt 1 onu 3 ctc optical</div>');</td>
+         </tr>
+        <tr>
+             <td>$('.list').append('<div class="item">show interface brief</div>');</td>
+             <td>...</td>
+         </tr>
+        <tr>
+             <td> $('.list').append('<div class="item">show epon onu-information</div>');</td> 
+             <td>...</td>
+         </tr>
+        <tr>
+             <td>$('.list').append('<div class="item">show epon active-onu</div>');</td> 
+             <td>...</td>
+         </tr>
+        <tr>
+             <td>$('.list').append('<div class="item">show epon inactive-onu</div>');</td> 
+             <td>...</td>
+         </tr>
+         
+      </table>	
 
   }
   else $('.list').append('<div class="item">' + 'Хибна адреса. Спробуй ще раз' + '</div>');
