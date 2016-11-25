@@ -1,4 +1,4 @@
-//Версія 1.3.4 від 2016/10/13
+//Версія 1.4.4 від 2016/11/25
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
 var adreso=''; // кінцева адреса
@@ -45,7 +45,7 @@ var pro=function()
       $('.list').append('<div class="item">sudo arp -s 192.168.'+ip+'.1 '+ adreso+'</div>');
       $('.list').append('<div class="item">arping -I        '+iface+'.'+vlan+' -b 192.168.'+ip+'.1</div>');
       $('.list').append('<div class="item">sudo vconfig rem '+iface+'.'+vlan+'</div>');
-      $('.list').append('<table class="item"> <thead> <th>Деякі корисні команди для олтів BDCOM</th><th>Команди для вашківського олта 172.20.224.140</th>   </thead><tr><td>show epon interface EPON0/1:2 onu ctc opt</td> <td>show mac-address-table all</td>      </tr>        <tr>             <td> show epon optical-transceiver-diagnosis</td>              <td>show olt 1 all-onu-info</td>         </tr>        <tr>             <td>show mac address-table interface EPON 0/1:2</td>              <td>show olt 1 mac-address-table mac-learning</td>         </tr>        <tr>             <td>show mac address-table dynamic vlan '+vlan+'</td>              <td>show olt 1 online-onu</td>         </tr>        <tr>             <td>show vlan id '+vlan+'</td>              <td>show olt 1 onu 3 ctc optical</td>         </tr>        <tr>             <td>show interface brief</td>             <td>...</td>         </tr>        <tr>             <td> show epon onu-information</td>              <td>...</td>         </tr>        <tr> <td>show epon active-onu</td> <td>...</td>  </tr>  <td>show epon inactive-onu</td>  <td>...</td> </tr> </table>');
+      $('.list').append('<table> <thead> <th>Деякі корисні команди для олтів BDCOM</th><th>Команди для вашківського олта 172.20.224.140</th>   </thead><tr><td>show epon interface EPON0/1:2 onu ctc opt</td> <td>show mac-address-table all</td>      </tr>        <tr>             <td> show epon optical-transceiver-diagnosis</td>              <td>show olt 1 all-onu-info</td>         </tr>        <tr>             <td>show mac address-table interface EPON 0/1:2</td>              <td>show olt 1 mac-address-table mac-learning</td>         </tr>        <tr>             <td>show mac address-table dynamic vlan '+vlan+'</td>              <td>show olt 1 online-onu</td>         </tr>        <tr>             <td>show vlan id '+vlan+'</td>              <td>show olt 1 onu 3 ctc optical</td>         </tr>        <tr>             <td>show interface brief</td>             <td>...</td>         </tr>        <tr>             <td> show epon onu-information</td>              <td>...</td>         </tr>        <tr> <td>show epon active-onu</td> <td>...</td>  </tr>  <td>show epon inactive-onu</td>  <td>...</td> </tr> </table>');
 
   }
   else $('.list').append('<div class="item">' + 'Хибна адреса. Спробуй ще раз' + '</div>');
