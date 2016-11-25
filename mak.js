@@ -47,50 +47,7 @@ var pro=function()
       $('.list').append('<div class="item">sudo arp -s 192.168.'+ip+'.1 '+ adreso+'</div>');
       $('.list').append('<div class="item">arping -I        '+iface+'.'+vlan+' -b 192.168.'+ip+'.1</div>');
       $('.list').append('<div class="item">sudo vconfig rem '+iface+'.'+vlan+'</div>');
-   
-       <table>
-        <thead>
-          <th>$('.list').append('<div class="item"><h4>Деякі корисні команди для олтів BDCOM<h4></div>');</th>
-          <th>$('.list').append('<div class="item"><h4>Команди для вашківського олта 172.20.224.140<h4></div>');</th>
-        </thead>
-        <tr>
-             <td>$('.list').append('<div class="item">show epon interface EPON0/1:2 onu ctc opt</div>');</td> 
-             <td>$('.list').append('<div class="item">show mac-address-table all</div>');</td>
-         </tr>
-        <tr>
-             <td> $('.list').append('<div class="item">show epon optical-transceiver-diagnosis</div>');</td> 
-             <td>$('.list').append('<div class="item">show olt 1 all-onu-info</div>');</td>
-         </tr>
-        <tr>
-             <td>$('.list').append('<div class="item">show mac address-table interface EPON 0/1:2</div>');</td> 
-             <td>$('.list').append('<div class="item">show olt 1 mac-address-table mac-learning</div>');</td>
-         </tr>
-        <tr>
-             <td> $('.list').append('<div class="item">show mac address-table dynamic vlan '+vlan+'</div>');</td> 
-             <td>$('.list').append('<div class="item">show olt 1 online-onu</div>');</td>
-         </tr>
-        <tr>
-             <td>$('.list').append('<div class="item">show vlan id '+vlan+'</div>');</td> 
-             <td>$('.list').append('<div class="item">show olt 1 onu 3 ctc optical</div>');</td>
-         </tr>
-        <tr>
-             <td>$('.list').append('<div class="item">show interface brief</div>');</td>
-             <td>...</td>
-         </tr>
-        <tr>
-             <td> $('.list').append('<div class="item">show epon onu-information</div>');</td> 
-             <td>...</td>
-         </tr>
-        <tr>
-             <td>$('.list').append('<div class="item">show epon active-onu</div>');</td> 
-             <td>...</td>
-         </tr>
-        <tr>
-             <td>$('.list').append('<div class="item">show epon inactive-onu</div>');</td> 
-             <td>...</td>
-         </tr>
-         
-      </table>	
+      $('.list').append('<table> <thead> <th>Деякі корисні команди для олтів BDCOM</th><th>Команди для вашківського олта 172.20.224.140</th>   </thead><tr>ow epon interface EPON0/1:2 onu ctc opt</td> <td>show mac-address-table all</td>      </tr>        <tr>             <td> show epon optical-transceiver-diagnosis</td>              <td>show olt 1 all-onu-info</td>         </tr>        <tr>             <td>show mac address-table interface EPON 0/1:2</td>              <td>show olt 1 mac-address-table mac-learning</td>         </tr>        <tr>             <td>show mac address-table dynamic vlan '+vlan+'</td>              <td>show olt 1 online-onu</td>         </tr>        <tr>             <td>show vlan id '+vlan+'</td>              <td>show olt 1 onu 3 ctc optical</td>         </tr>        <tr>             <td>item">show interface brief</td>             <td>...</td>         </tr>        <tr>             <td> show epon onu-information</td>              <td>...</td>         </tr>        <tr>             <td>show epon active-onu</td>              <td>...</td>         </tr>        <tr>             <td>show epon inactive-onu</td>              <td>...</td>         </tr>               </table>	');
 
   }
   else $('.list').append('<div class="item">' + 'Хибна адреса. Спробуй ще раз' + '</div>');
