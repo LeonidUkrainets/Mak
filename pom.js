@@ -22,6 +22,8 @@ $(document).ready(function ()
         adreso='';
         
         port  =$('input[name=port]').val();
+        $('.list').append('<div class="item"> show mac address-table int epon ' + port + '</div>'); // команда для перевірки лінку з оптичним терміналом абонента
+        $('.list').append('<div class="item">show epon interface epon '+port+' onu ctc opt</div>');
         //for (i=;i<port.length;i++)
        //   {if (port[i]!==' ' && adresa.charCodeAt(i)!==9) {port=port+port[i];}}
       //  }
