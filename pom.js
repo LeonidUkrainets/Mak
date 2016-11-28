@@ -16,12 +16,13 @@ var create=function()
 
 $(document).ready(function ()
     {
-    $('#button').click(function ()
+    $('#button2').click(function ()
         {
         $(".item").remove();
         adreso='';
         
         port  =$('input[name=port]').val();
+        $('.list').append('<div class="item">'+port+'</div>');
         $('.list').append('<div class="item"> show mac address-table int epon ' + port + '</div>'); // команда для перевірки лінку з оптичним терміналом абонента
         $('.list').append('<div class="item">show epon interface epon '+port+' onu ctc opt</div>');
         //for (i=;i<port.length;i++)
