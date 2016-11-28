@@ -4,38 +4,35 @@
   <title>Мак</title>
   <meta name="description" value="Зручний інструмент для перетворення фізичної адреси мережевого пристрою з будь-якого формату в усі можливі." />
   <link rel="stylesheet" href="mak.css" />
-  
- </head>
-	<body>
-		<div class="header">
-      <a href="index.html"><p class="name"> Головна</p></a>
-			
-	
-		</div>
-		<div class="left">
+  </head>
+  <body>
+     <div class="header">
+       <a href="index.html"><p class="name"> Головна</p></a>
+     </div>
+	<div class="left">
          <image src='mak.jpg' />
          Мак 1.4.4
-         </div>
+     </div>
 	<div class="right">
-	<div class="item">
-        <table class="item"> 
-          <thead class="item"> 
+	   <div class="item">
+           <table class="item"> 
+             <thead class="item"> 
              <th class="item">Деякі корисні команди для олтів BDCOM</th>
              <th class="item">Команди для вашківського олта 172.20.224.140</th>  
-          </thead>
-          <tr><td>show epon interface EPON0/1:2 onu ctc opt</td> <td>show mac-address-table all</td>      </tr> 
-          <tr>           <td> show epon optical-transceiver-diagnosis</td>     <td>show olt 1 all-onu-info</td>         </tr>
-	  <tr> <td>show mac address-table interface EPON 0/1:2</td>  <td>show olt 1 mac-address-table mac-learning</td> </tr>
-	  <tr><td>show epon active-onu</td>              <td>show olt 1 online-onu</td>         </tr>  
-	  <tr>             <td>show epon inactive-onu</td>              <td>show olt 1 onu 3 ctc optical</td>         </tr>   
-	  <tr>             <td>show interface brief</td>             <td>...</td>         </tr>       
-	  <tr>             <td> show epon onu-information</td>              <td>...</td>         </tr> 
-	 
-	</table>
-		<h3>Введи еПОМ у форматі 0/1:2<h3>
-			<form name="checkListForm2">
-              
-               <input type="text" placeholder="еПОМ" name="port">
+             </thead>
+             <tbody>
+             <tr><td>show epon interface EPON0/1:2 onu ctc opt</td> <td>show mac-address-table all</td>      </tr> 
+             <tr>           <td> show epon optical-transceiver-diagnosis</td>     <td>show olt 1 all-onu-info</td>         </tr>
+	     <tr> <td>show mac address-table interface EPON 0/1:2</td>  <td>show olt 1 mac-address-table mac-learning</td> </tr>
+	     <tr><td>show epon active-onu</td>              <td>show olt 1 online-onu</td>         </tr>  
+	     <tr>             <td>show epon inactive-onu</td>              <td>show olt 1 onu 3 ctc optical</td>         </tr>   
+	     <tr>             <td>show interface brief</td>             <td>...</td>         </tr>       
+	     <tr>             <td> show epon onu-information</td>              <td>...</td>         </tr> 
+	     </tbody>
+	   </table>
+	   <h3>Введи еПОМ у форматі 0/1:2<h3>
+		<form name="checkListForm2">
+                   <input type="text" placeholder="еПОМ" name="port">
              
    		    </form>
             <a href="#"><p id="button">Створити</p></a>
