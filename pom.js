@@ -16,7 +16,7 @@ var create=function()
 
 $(document).ready(function ()
     {
-    $('#button2').click(function ()
+    $('#button2').click(function () //
         {
         $(".item").remove();
         adreso='';
