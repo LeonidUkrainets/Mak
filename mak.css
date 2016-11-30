@@ -103,7 +103,18 @@ form {
     display: inline-block;
 }
 
-#button, #button2 {
+#button {
+    display: inline-block;
+    height:  25px;
+	width:  135px;
+	background-color:slateblue;
+	font-family:Arial;
+	color:yellow;
+	border-radius: 5px;
+	text-align:center;
+	margin-top:2px;
+}
+ #button2 {
     display: inline-block;
     height:  25px;
 	width:  135px;
