@@ -1,4 +1,4 @@
-/* Версія 1.3 */
+/* Версія 1.4.4 */
 div {
 	border-radius: 5px;
 }
@@ -35,12 +35,12 @@ h4 {
 	font-family: Arial, Verdana, sans-serif;
 }
 
-.right p {
+.right p, form {
 	margin-left: 5px;
 	margin-right: 5px;
 	margin-top: -10px;
 	font-family: Arial, Verdana, sans-serif;
-	color: #000000;
+	color: slateblue;
 }
 
 a:hover {
@@ -124,4 +124,15 @@ form {
 	border-radius: 5px;
 	text-align:center;
 	margin-top:2px;
+}
+
+.list {
+    text-align: center;
+}
+table {
+	
+	background-color: yellow;
+    color: slateblue;
+	text-align: left;
+    font-size: 18px;
 }
