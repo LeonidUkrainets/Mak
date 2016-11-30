@@ -45,7 +45,7 @@ $(document).ready(function ()
         adresa=adreso;
         adreso='';
         $('.list').append('<div class="item"> show mac add int epon ' + adresa + '</div>');
-        $('.list').append('<div class="item"> how epon int epon ' + adresa + ' onu ctc opt</div>');
+        $('.list').append('<div class="item"> show epon int epon ' + adresa + ' onu ctc opt</div>');
         switch (adresa.length)
           {
           case 6: 
