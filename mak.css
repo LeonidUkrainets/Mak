@@ -103,7 +103,7 @@ form {
     display: inline-block;
 }
 
-#button{
+#button, #button2 {
     display: inline-block;
     height:  25px;
 	width:  135px;
