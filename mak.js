@@ -45,6 +45,8 @@ var pro=function()
       $('.list').append('<div class="item">sudo arp -s 192.168.'+ip+'.1 '+ adreso+'</div>');
       $('.list').append('<div class="item">arping -I        '+iface+'.'+vlan+' -b 192.168.'+ip+'.1</div>');
       $('.list').append('<div class="item">sudo vconfig rem '+iface+'.'+vlan+'</div>');
+      $('.list').append('<div class="item"><a href="https://macvendors.co/api/vendorname/'+adreso+'"><p class="name"> Виробник</p></a></div>');
+
       
 
   }
