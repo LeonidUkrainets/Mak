@@ -1,10 +1,10 @@
-//Версія 1.4.9 від 2017/01/19
+//Версія 1.5.0 від 2017/01/19
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
 var adreso=''; // кінцева адреса
 var apireq='https://macvendors.co/api/vendorname/';
 function getRndmInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+    return Math.floor(Math.random() * (max - min+1)) + min;
 }
 var pro=function()
  {
