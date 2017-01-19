@@ -1,8 +1,11 @@
-//Версія 1.4.8 від 2017/01/19
+//Версія 1.4.9 від 2017/01/19
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
 var adreso=''; // кінцева адреса
 var apireq='https://macvendors.co/api/vendorname/';
+function getRndmInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 var pro=function()
  {
   for (i=0;i<12;i++)
@@ -67,7 +70,7 @@ $(document).ready(function ()
         iface =$('input[name=iface]').val();
         if (iface==='') 
            {iface='eth1';}
-        ip_comp=Math.floor((Math.random() * 88) + 10);
+        ip_comp=getRndmInteger(10, 99);
         for (i=0;i<adresa.length;i++)
           {if (adresa[i]!==' ' && adresa.charCodeAt(i)!==9) {adreso=adreso+adresa[i];}}
         adresa=adreso;
