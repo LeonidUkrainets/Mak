@@ -1,4 +1,4 @@
-//Версія 1.5.4 від 2017/02/06
+//Версія 1.5.5 від 2017/02/06
 
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
@@ -44,7 +44,7 @@ var pro=function()
 		
 		}
     }).fail(function(error){
-        alert(error.statusText);
+    
     });
 
       adreso=adresa.substring(0,2);
