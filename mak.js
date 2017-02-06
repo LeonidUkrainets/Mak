@@ -1,4 +1,5 @@
-//Версія 1.5.0 від 2017/01/19
+//Версія 1.5.4 від 2017/02/06
+
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
 var adreso=''; // кінцева адреса
@@ -28,6 +29,24 @@ var pro=function()
       i+=4;}
       while (i<adresa.length)
       $('.list').append('<div class="item"> show mac add ' + adreso + '</div>'); // команда для перевірки лінку з оптичним терміналом абонента
+
+      $.ajax({
+        type: 'GET',
+        url: 'http://macvendors.co/api/jsonp/'+adreso,
+        dataType: 'jsonp',
+        crossDomain: true,
+    }).done(function(response){
+		if(response.result.error){
+            $('.list').append('<div class="item">'+response.result.error+ '</div>');
+			
+		}else{
+			$('.list').append('<div class="item">'+response.result.company+ '</div>');
+		
+		}
+    }).fail(function(error){
+        alert(error.statusText);
+    });
+
       adreso=adresa.substring(0,2);
       i=2;
       do
@@ -42,6 +61,10 @@ var pro=function()
       i+=2;}
       while (i<adresa.length)
                     
+
+    
+
+
       $('.list').append('<div class="item">' + adreso + '</div>');
       $('.list').append('<div class="item">sudo vconfig add '+iface+' '+vlan+'</div>');
       $('.list').append('<div class="item">sudo ifconfig    '+iface+'.'+vlan+' inet 192.168.'+ip+'.'+ip_comp+'</div>');
