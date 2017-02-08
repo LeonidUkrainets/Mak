@@ -1,5 +1,6 @@
 //Версія 1.5.6 від 2017/02/08
 
+var vyrobn= [];
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
 var adreso=''; // кінцева адреса
@@ -7,27 +8,12 @@ var apireq='https://macvendors.co/api/vendorname/';
 function getRndmInteger(min, max) {
     return Math.floor(Math.random() * (max - min+1)) + min;
 }
-var pro=function()
- { // Наступний цикл перевіряє, чи введені символи відповідають тим, що можуть бути в мак-адресі.
-  find_error=false;
-  for (i=0;i<12;i++)
-  {  
-     if (abetka.indexOf(adresa[i])<0)    find_error=true;
-  }
+var zap=function() 
+ {
  
-  if (find_error===false) 
-  {   //$('.list').append('<div class="item">' + adresa + '</div>'); вивід адреси без розділових знаків
-      adreso=adresa.substring(0,4);
-      i=4;
-      do
-      {adreso=adreso+'.'+adresa.substring(i,i+4);
-      i+=4;}
-      while (i<adresa.length)
-      $('.list').append('<div class="item"> show mac add ' + adreso + '</div>'); // команда для перевірки лінку з оптичним терміналом абонента
-
       $.ajax({
         type: 'GET',
-        url: 'http://macvendors.co/api/jsonp/'+adreso,
+        url: 'https://macvendors.co/api/jsonp/'+adreso,
         dataType: 'jsonp',
         crossDomain: true,
     }).done(function(response){
@@ -35,12 +21,35 @@ var pro=function()
             $('.list').append('<div class="item">'+response.result.error+ '</div>');
 			
 		}else{
-			$('.list').append('<div class="item">'+response.result.company+ '</div>');
+			$('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank"><p class="name">' +response.result.company+'</p></a></div>');
 		
 		}
     }).fail(function(error){
     
     });
+ };
+
+var pro=function()
+ { // Наступний цикл перевіряє, чи введені символи відповідають тим, що можуть бути в мак-адресі.
+  find_error=false;
+  for (i=0;i<12;i++)
+  {  
+     if (abetka.indexOf(adresa[i])<0)    find_error=true;
+  }
+  //adreso=adresa;
+  
+  if (find_error===false) 
+      {
+      //$('.list').append('<div class="item">' + adresa + '</div>'); вивід адреси без розділових знаків
+      
+      adreso=adresa.substring(0,4);
+      i=4;
+      do
+      {adreso=adreso+'.'+adresa.substring(i,i+4);
+      i+=4;}
+      while (i<adresa.length)
+      $('.list').append('<div class="item"> show mac add ' + adreso + '</div>'); // команда для перевірки лінку з оптичним терміналом абонента
+      
 
       adreso=adresa.substring(0,2);
       i=2;
@@ -56,8 +65,8 @@ var pro=function()
       i+=2;}
       while (i<adresa.length)
                     
-
-    
+      
+      
 
 
       $('.list').append('<div class="item">' + adreso + '</div>');
@@ -66,8 +75,9 @@ var pro=function()
       $('.list').append('<div class="item">sudo arp -s 192.168.'+ip+'.1 '+ adreso+'</div>');
       $('.list').append('<div class="item">arping -I        '+iface+'.'+vlan+' -b 192.168.'+ip+'.1</div>');
       $('.list').append('<div class="item">sudo vconfig rem '+iface+'.'+vlan+'</div>');
+      zap();
     //  $('.list').append('<div class="item"><a href=https://macvendors.co/api/vendorname/'+adreso+' target="_blank"><p class="name" >Дізнатись виробника</p></a><br></div>');
-      $('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank"><p class="name"> Перейти до налаштувань роутера</p></a></div>');
+    //  $('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank"><p class="name"> Перейти до налаштувань роутера</p></a></div>');
    
 
   }
