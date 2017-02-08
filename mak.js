@@ -8,18 +8,13 @@ function getRndmInteger(min, max) {
     return Math.floor(Math.random() * (max - min+1)) + min;
 }
 var pro=function()
- {
+ { // Наступний цикл перевіряє, чи введені символи відповідають тим, що можуть бути в мак-адресі.
+  find_error=false;
   for (i=0;i<12;i++)
   {  
-     var find_error=true;
-     var j=0;
-     while (j<abetka.length && find_error)
-        {
-            if ( adresa[i]===abetka[j] )
-              {find_error=false;}
-            j++;
-        }
+     if (abetka.indexOf(adresa[i])<0)    find_error=true;
   }
+ 
   if (find_error===false) 
   {   //$('.list').append('<div class="item">' + adresa + '</div>'); вивід адреси без розділових знаків
       adreso=adresa.substring(0,4);
