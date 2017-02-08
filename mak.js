@@ -1,4 +1,4 @@
-//Версія 1.5.5 від 2017/02/06
+//Версія 1.5.6 від 2017/02/08
 
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
@@ -71,7 +71,7 @@ var pro=function()
       $('.list').append('<div class="item">sudo arp -s 192.168.'+ip+'.1 '+ adreso+'</div>');
       $('.list').append('<div class="item">arping -I        '+iface+'.'+vlan+' -b 192.168.'+ip+'.1</div>');
       $('.list').append('<div class="item">sudo vconfig rem '+iface+'.'+vlan+'</div>');
-      $('.list').append('<div class="item"><a href=https://macvendors.co/api/vendorname/'+adreso+' target="_blank"><p class="name" >Дізнатись виробника</p></a><br></div>');
+    //  $('.list').append('<div class="item"><a href=https://macvendors.co/api/vendorname/'+adreso+' target="_blank"><p class="name" >Дізнатись виробника</p></a><br></div>');
       $('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank"><p class="name"> Перейти до налаштувань роутера</p></a></div>');
    
 
