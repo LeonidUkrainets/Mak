@@ -1,16 +1,28 @@
-//Версія 1.5.6 від 2017/02/08
-
-var vyrobn= [];
+//Версія 1.5.7 від 2017/02/09
+var vyrobn= ['Edimax Technology Co. Ltd.',
+             'Tenda Technology Co., Ltd.',
+             'TP-LINK TECHNOLOGIES CO.,LTD.',
+             'NETCORE SYSTEMS, INC.',
+             'Netcore Technology Inc.', 
+             'ASUSTek COMPUTER INC.'];
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
 var adreso=''; // кінцева адреса
 var apireq='https://macvendors.co/api/vendorname/';
+
 function getRndmInteger(min, max) {
     return Math.floor(Math.random() * (max - min+1)) + min;
 }
+// перевіряє, чи введені символи відповідають тим, що можуть бути в мак-адресі.
+function perevirkaAdres(makadresa){
+  pravylna=true;
+  for (i=0;i<makadresa.length;i++)
+    {if (abetka.indexOf(makadresa[i])<0) pravylna=false;}
+  return pravylna;
+}
+
 var zap=function() 
  {
- 
       $.ajax({
         type: 'GET',
         url: 'https://macvendors.co/api/jsonp/'+adreso,
@@ -30,18 +42,9 @@ var zap=function()
  };
 
 var pro=function()
- { // Наступний цикл перевіряє, чи введені символи відповідають тим, що можуть бути в мак-адресі.
-  find_error=false;
-  for (i=0;i<12;i++)
-  {  
-     if (abetka.indexOf(adresa[i])<0)    find_error=true;
-  }
-  //adreso=adresa;
-  
-  if (find_error===false) 
-      {
+  if (perevirkaAdres(adresa)===true) 
+  {
       //$('.list').append('<div class="item">' + adresa + '</div>'); вивід адреси без розділових знаків
-      
       adreso=adresa.substring(0,4);
       i=4;
       do
@@ -49,8 +52,6 @@ var pro=function()
       i+=4;}
       while (i<adresa.length)
       $('.list').append('<div class="item"> show mac add ' + adreso + '</div>'); // команда для перевірки лінку з оптичним терміналом абонента
-      
-
       adreso=adresa.substring(0,2);
       i=2;
       do
@@ -64,11 +65,7 @@ var pro=function()
       {adreso=adreso+':'+adresa.substring(i,i+2);
       i+=2;}
       while (i<adresa.length)
-                    
-      
-      
-
-
+   
       $('.list').append('<div class="item">' + adreso + '</div>');
       $('.list').append('<div class="item">sudo vconfig add '+iface+' '+vlan+'</div>');
       $('.list').append('<div class="item">sudo ifconfig    '+iface+'.'+vlan+' inet 192.168.'+ip+'.'+ip_comp+'</div>');
@@ -78,8 +75,6 @@ var pro=function()
       zap();
     //  $('.list').append('<div class="item"><a href=https://macvendors.co/api/vendorname/'+adreso+' target="_blank"><p class="name" >Дізнатись виробника</p></a><br></div>');
     //  $('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank"><p class="name"> Перейти до налаштувань роутера</p></a></div>');
-   
-
   }
   else $('.list').append('<div class="item">' + 'Хибна адреса. Спробуй ще раз' + '</div>');
  };

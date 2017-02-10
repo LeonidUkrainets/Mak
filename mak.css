@@ -1,4 +1,4 @@
-/* Версія 1.4.4 */
+/* Версія 1.5.7 від 2017/02/10 */
 div {
 	border-radius: 5px;
 }
@@ -98,6 +98,10 @@ img {
 	height:140px;
 }
 h3, h2 {text-align: center;}
+
+ins {
+    text-decoration: none;
+}
 
 form {
     display: inline-block;
