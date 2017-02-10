@@ -67,9 +67,10 @@ var pro=function()
       while (i<adresa.length)
    
       $('.list').append('<div class="item">' + adreso + '</div>');
-      $('.list').append('<div class="item">sudo vconfig add '+iface+' '+vlan+'</div>');
-      $('.list').append('<div class="item">sudo ifconfig    '+iface+'.'+vlan+' inet 192.168.'+ip+'.'+ip_comp+'</div>');
-      $('.list').append('<div class="item">sudo arp -s 192.168.'+ip+'.1 '+ adreso+'</div>');
+      $('.list').append('<div class="item">sudo -s</div>');
+      $('.list').append('<div class="item">vconfig add '+iface+' '+vlan+'</div>');
+      $('.list').append('<div class="item">ifconfig    '+iface+'.'+vlan+' inet 192.168.'+ip+'.'+ip_comp+'</div>');
+      $('.list').append('<div class="item">arp -s 192.168.'+ip+'.1 '+ adreso+'</div>');
       $('.list').append('<div class="item">arping -I        '+iface+'.'+vlan+' -b 192.168.'+ip+'.1</div>');
       $('.list').append('<div class="item">sudo vconfig rem '+iface+'.'+vlan+'</div>');
       zap();
