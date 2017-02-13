@@ -1,4 +1,4 @@
-//Версія 1.5.9 від 2017/02/13
+//Версія 1.6.0 від 2017/02/13
 var vyrob1= ['Netcore Technology Inc.','ASUSTek COMPUTER INC.'];
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
@@ -51,6 +51,7 @@ var pro=function()
       i+=2;}
       while (i<adresa.length)
       $('.list').append('<div class="item">' + adreso + '</div>');
+      $('.list').append('<div class="item"><h4>Команди для операційної системи<h4></div>');
       $('.list').append('<div class="item">sudo -s</div>');
       $('.list').append('<div class="item">vconfig add '+iface+' '+vlan+'</div>');
       $('.list').append('<div class="item">ifconfig    '+iface+'.'+vlan+' inet 192.168.'+ip+'.'+ip_comp+'</div>');
@@ -65,10 +66,10 @@ var pro=function()
       while (i<adresa.length)
       $('.list').append('<div class="item"><h4>Деякі корисні команди для олта BDCOM<h4></div>');
       $('.list').append('<div class="item"> show mac add ' + adreso + '</div>'); // команда для перевірки лінку з оптичним терміналом абонента
-      $('.list').append('<div class="item">show mac add int epon 0/1:2</div>');
-      $('.list').append('<div class="item">show epon int epon '+'0/1:2'+' onu ctc opt</div>');
-      $('.list').append('<div class="item">show mac address-table dynamic vlan '+vlan+'</div>');
-      $('.list').append('<div class="item">show vlan id '+vlan+'</div>');
+      $('.list').append('<div class="item"> show mac add int epon ' + epom + '</div>');
+      $('.list').append('<div class="item">show epon int epon '+epom+' onu ctc opt</div>');
+ //     $('.list').append('<div class="item">show mac address-table dynamic vlan '+vlan+'</div>');
+//      $('.list').append('<div class="item">show vlan id '+vlan+'</div>');
       $('.list').append('<div class="item">show interface brief</div>');
       $('.list').append('<div class="item">show epon onu-information</div>');
       $('.list').append('<div class="item">show epon active-onu</div>');
