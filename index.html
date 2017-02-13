@@ -1,33 +1,35 @@
 <html>
  <head>
   <meta charset="UTF-8" />
-  <title>Мак</title>
+  <title>Мак 1.5.9</title>
   <meta name="description" value="Зручний інструмент для перетворення фізичної адреси мережевого пристрою з будь-якого формату в усі можливі." />
   <link rel="stylesheet" href="mak.css" />
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
  </head>
 	<body>
-		<div id="header">
-			<p id="name"><strong>Мак 1.2.2</strong></p>
+		<div class="header">
+            <a href="rekvi.html"><p class="name" target="_blank"> Реквізити</p></a>
 			<a href="mailto:system.analitik@gmail.com"><p id="email">Написати відгук</p></a>
 		</div>
 		<div class="left">
          <image src='mak.jpg' />
-         ТОВ "Аргоком"  2016 рік
+           <p id="name"><strong>Мак 1.5</strong></p>
          </div>
 		<div class="right">
-			<h3>Перетворення формату фізичної адреси мережевого пристрою з будь-якого в усі можливі і формування команд для підключення маршрутера.</h3>
-			Введи номер віртуальної мережі і фізичну адресу. <br/>Прийнятні формати мак-адрес: 00-22-15-75-1C-1E, 00:30:48:5a:58:65, 000a.e475.7434, 000ae4757469.
+			<h3>Перетворення фізичної адреси мережевого пристрою в потрібний формат і формування команд для підключення маршрутера</h3>
+			Введи номер еПОМ-інтерфейсу, назву інтерфейсу компа, номер віртуальної мережі і фізичну адресу роутера. <br/>
+            Прийнятні формати мак-адрес: 00-0e-2e-84-2d-4b, 00:18:37:08:60:5d, 000a.e475.7434, 000ae4757469.
             <br><br/>
        		<form name="checkListForm">
-               <input type="text" placeholder="номер влану"name="vlan">
-               <input type="text" placeholder="мак-адреса" name="checkListItem"/>
+               <input type="text" placeholder="наприклад 0:1/63"       name="epom">
+               <input type="text" placeholder="назва інтерфейсу"       name="iface">
+               <input type="text" placeholder="номер влану"            name="vlan">
+               <input type="text" placeholder="мак-адреса"             name="checkListItem">
    		    </form>
-            <a href="#"><p id="button">Перетворити</p></a>
+            <a href="#"><p id="button">Виконати!</p></a>
 	            <br/>
-            <div class="list">Підсумок виконання:</div>
+            <div class="list"><h3>Підсумок виконання:<h3></div>
          </div>
             <script type="text/javascript" src="mak.js"></script>
-      
 	</body>
 </html>
