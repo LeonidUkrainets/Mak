@@ -3,6 +3,7 @@ var vyrob1= ['Netcore Technology Inc.','ASUSTek COMPUTER INC.'];
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
 var adreso=''; // кінцева адреса
+var ip=0;
 function getRndmInteger(min, max) {
     return Math.floor(Math.random() * (max - min+1)) + min;
 };
@@ -24,20 +25,10 @@ var zap=function()
             $('.list').append('<div class="item">'+response.result.error+ '</div>');
 	
 		}else{
-            //if ((response.result.company) in vyrobn){
-            //   ip=1;}
-			$('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank"><p class="name">' +response.result.company+'</p></a></div>');
-	
-		}
-    }).fail(function(error){
-    
-    });
- };
-var pro=function()
- { 
-  if (perevirkaAdres(adresa)===true) 
-  {   zap(); 
-      adreso=adresa.substring(0,2);
+            if ((response.result.company)=='ASUSTek COMPUTER INC.'){
+               ip=1;}
+			$('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank">'+response.result.company+'</a></div>');
+            adreso=adresa.substring(0,2);
       i=2;
       do
       {adreso=adreso+'-'+adresa.substring(i,i+2);
@@ -68,13 +59,19 @@ var pro=function()
       $('.list').append('<div class="item"> show mac add ' + adreso + '</div>'); // команда для перевірки лінку з оптичним терміналом абонента
       $('.list').append('<div class="item"> show mac add int epon ' + epom + '</div>');
       $('.list').append('<div class="item">show epon int epon '+epom+' onu ctc opt</div>');
- //     $('.list').append('<div class="item">show mac address-table dynamic vlan '+vlan+'</div>');
-//      $('.list').append('<div class="item">show vlan id '+vlan+'</div>');
-      $('.list').append('<div class="item">show interface brief</div>');
+	  $('.list').append('<div class="item">show interface brief</div>');
       $('.list').append('<div class="item">show epon onu-information</div>');
       $('.list').append('<div class="item">show epon active-onu</div>');
-      $('.list').append('<div class="item">show epon inactive-onu</div>');
-
+      $('.list').append('<div class="item">show epon inactive-onu</div>');      
+     }
+    }).fail(function(error){
+    
+    });
+ };
+var pro=function()
+ { 
+  if (perevirkaAdres(adresa)===true) 
+  {   zap();
   }
   else $('.list').append('<div class="item">' + 'Хибна адреса. Спробуй ще раз' + '</div>');
  };
