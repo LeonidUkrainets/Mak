@@ -51,7 +51,7 @@ var zap=function()
       i+=4;}
       while (i<adresa.length)
 		}else{
-            if ((response.result.company)=='ASUSTek COMPUTER INC.' or response.result.company=='Netcore Technology Inc.'){
+            if ((response.result.company)=='ASUSTek COMPUTER INC.' || response.result.company=='Netcore Technology Inc.'){
                ip=1;}
 			$('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank">'+response.result.company+'</a></div>');
             adreso=adresa.substring(0,2);
