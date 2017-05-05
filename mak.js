@@ -1,4 +1,4 @@
-//Версія 1.6.2 від 2017/02/17
+//Версія 1.6.4 від 2017/05/05
 var vyrob1= ['Netcore Technology Inc.','ASUSTek COMPUTER INC.'];
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
@@ -50,7 +50,7 @@ var zap=function()
       $('.list').append('<div class="item"><h4>Команди для операційної системи<h4></div>');
       $('.list').append('<div class="item">sudo -s</div>');
       $('.list').append('<div class="item">vconfig add '+iface+' '+vlan+'</div>');
-      $('.list').append('<div class="item">ifconfig    '+iface+'.'+vlan+' inet 192.168.'+ip+'.'+ip_comp+'</div>');
+      $('.list').append('<div class="item">ifconfig    '+iface+'.'+vlan+' inet 192.168.'+ip+'.'+ip_comp+'/24</div>');
       $('.list').append('<div class="item">arp -s 192.168.'+ip+'.1 '+ adreso+'</div>');
       $('.list').append('<div class="item">arping -I        '+iface+'.'+vlan+' -b 192.168.'+ip+'.1</div>');
       $('.list').append('<div class="item">vconfig rem '+iface+'.'+vlan+'</div>');
