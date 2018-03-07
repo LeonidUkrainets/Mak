@@ -33,7 +33,7 @@ var zap=function()
           break;
         default:
           ip='0';
-            
+        }  
       adreso=adresa.substring(0,2);
       i=2;
       do
