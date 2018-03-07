@@ -1,4 +1,4 @@
-//Версія 1.6.4 від 2017/05/05
+//Версія 1.6.8 від 2018/03/07
 var vyrob1= ['Netcore Technology Inc.','ASUSTek COMPUTER INC.'];
 var abetka= ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F'];
 var adresa=''; // початкова адреса, отримана шляхом введення
@@ -21,7 +21,9 @@ var zap=function()
         dataType: 'jsonp',
         crossDomain: true,
       }).done(function(response){
+      
       ip='0';
+      $('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank">'+response.result.company+'</a></div>');
       switch(response.result.company) {
       case 'ASUSTek COMPUTER INC.':
         ip='1';
