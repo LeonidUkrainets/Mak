@@ -21,20 +21,22 @@ var zap=function()
         dataType: 'jsonp',
         crossDomain: true,
       }).done(function(response){
-      
-      ip='0';
-      $('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank">'+response.result.company+'</a></div>');
-      switch(response.result.company) {
-      case 'ASUSTek COMPUTER INC.':
-        ip='1';
-        break;
-      case 'Netcore Technology Inc.':
-        ip='1';
-        break;
-      default:
+      if(response.result.error){
+			$('#result').html(response.result.error);
+      }else{
         ip='0';
-      }
-      $('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank">'+response.result.company+'</a></div>');
+        $('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank">'+response.result.company+'</a></div>');
+        switch(response.result.company) {
+        case 'ASUSTek COMPUTER INC.':
+          ip='1';
+          break;
+        case 'Netcore Technology Inc.':
+          ip='1';
+          break;
+        default:
+          ip='0';
+        }
+      
       adreso=adresa.substring(0,2);
       i=2;
       do
@@ -72,6 +74,7 @@ var zap=function()
       $('.list').append('<div class="item">show epon active-onu</div>');
       $('.list').append('<div class="item">show epon inactive-onu</div>');           
       }).fail(function(error){
+          alert(error.statusText);
     });
  };
 var pro=function()
