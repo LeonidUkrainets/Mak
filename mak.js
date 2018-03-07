@@ -74,7 +74,7 @@ var zap=function()
       $('.list').append('<div class="item">show epon active-onu</div>');
       $('.list').append('<div class="item">show epon inactive-onu</div>');           
       }).fail(function(error){
-          alert(error.statusText);
+        
     });
  };
 var pro=function()
