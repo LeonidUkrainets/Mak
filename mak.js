@@ -21,9 +21,7 @@ var zap=function()
         dataType: 'jsonp',
         crossDomain: true,
       }).done(function(response){
-      if(response.result.error){
-			$('#result').html(response.result.error);
-      }else{
+      
         ip='0';
         $('.list').append('<div class="item"><a href=http://192.168.'+ip+'.1 target="_blank">'+response.result.company+'</a></div>');
         switch(response.result.company) {
@@ -35,8 +33,7 @@ var zap=function()
           break;
         default:
           ip='0';
-        }
-      
+            
       adreso=adresa.substring(0,2);
       i=2;
       do
